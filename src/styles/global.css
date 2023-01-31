@@ -1,0 +1,57 @@
+@font-face {
+  font-family: 'Mona Sans';
+  src: url('../fonts/Mona-Sans-Regular.woff2')
+      format('woff2 supports variations'),
+    url('../fonts/Mona-Sans-Regular.woff2') format('woff2-variations');
+  font-weight: 200 900;
+  font-stretch: 75% 125%;
+}
+
+:root {
+  --content-max-width: 800px;
+  --primary: #2d333a;
+}
+
+html {
+  font-family: 'Mona Sans', sans-serif;
+}
+
+* {
+  box-sizing: border-box;
+  position: relative;
+}
+
+body {
+  max-width: var(--content-max-width);
+  margin: 40px auto;
+  font-size: 16px;
+  color: var(--primary);
+}
+
+h1,
+h2,
+h3 {
+  line-height: 1.2;
+}
+
+img {
+  width: -webkit-fill-available;
+}
+
+header,
+main {
+  padding: 0 20px;
+}
+
+@media (prefers-color-scheme: dark) {
+  body {
+    background: #0d1117;
+    color: #c9d1d9;
+  }
+  a:link {
+    color: #58a6ff;
+  }
+  a:visited {
+    color: #8e96f0;
+  }
+}

@@ -1,0 +1,30 @@
+---
+import { SITE_TITLE } from '../config';
+import HeaderLink from './HeaderLink.astro';
+---
+
+<header>
+  <h2>
+    {SITE_TITLE}
+  </h2>
+  <nav>
+    <HeaderLink href="/">Home</HeaderLink>
+    <HeaderLink href="/works">Works</HeaderLink>
+    <HeaderLink href="/about">About</HeaderLink>
+    <HeaderLink href="https://www.instagram.com/art.forests/" target="_blank">Instagram</HeaderLink>
+  </nav>
+</header>
+<style>
+  header {
+    display: flex;
+    align-items: center;
+    margin: 0 0 2em;
+  }
+  h2 {
+    flex-grow: 1;
+    margin: 0;
+  }
+  nav {
+    margin: 0 0 0 0.5em;
+  }
+</style>

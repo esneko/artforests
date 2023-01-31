@@ -1,0 +1,37 @@
+---
+import Header from '../components/Header.astro'
+import Metadata from '../components/Metadata.astro'
+import { SITE_DESCRIPTION, SITE_TITLE } from '../config'
+
+const posts = (await Astro.glob('./blog/*.{md,mdx}')).sort(
+  (a, b) =>
+    new Date(b.frontmatter.updatedDate).valueOf() -
+    new Date(a.frontmatter.updatedDate).valueOf()
+)
+---
+
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <Metadata title={SITE_TITLE} description={SITE_DESCRIPTION} />
+  </head>
+  <body>
+    <Header />
+    <main>
+      <section>
+        <ul>
+          {
+            posts.map((post) => (
+              <li>
+                <time datetime={post.frontmatter.updatedDate}>
+                  {new Date(post.frontmatter.updatedDate).getFullYear()}
+                </time>
+                <a href={post.url}>{post.frontmatter.title}</a>
+              </li>
+            ))
+          }
+        </ul>
+      </section>
+    </main>
+  </body>
+</html>

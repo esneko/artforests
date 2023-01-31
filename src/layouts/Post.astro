@@ -1,0 +1,36 @@
+---
+import Header from '../components/Header.astro'
+import Metadata from '../components/Metadata.astro'
+
+export interface Props {
+  content: {
+    title: string
+    description: string
+    heroImage?: string
+  }
+}
+
+const {
+  content: { title, description },
+} = Astro.props
+---
+
+<html lang="en">
+  <head>
+    <Metadata title={title} description={description} />
+    <style>
+      .hero {
+        height: 100%;
+        width: 100%;
+      }
+    </style>
+  </head>
+  <body>
+    <Header />
+    <main>
+      <article>
+        <slot />
+      </article>
+    </main>
+  </body>
+</html>
