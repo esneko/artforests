@@ -4,8 +4,8 @@ import { defineConfig } from 'astro/config'
 
 // https://astro.build/config
 export default defineConfig({
-  site: 'https://esneko.github.io/artforests/',
-  base: '/artforests',
+  site: 'https://artforests.com',
+  base: '/',
   integrations: [
     mdx({
       extendMarkdownConfig: false,
